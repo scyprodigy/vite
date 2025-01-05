@@ -1,0 +1,337 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body {
+ 
+  background-color: black;
+} */
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+}
+
+.positionArea {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(2545 / 1257 * 100vh); /* 根據螢幕高度調整寬度 */
+  height: 100vh; /* 高度為螢幕高度 */
+  /* background-color: #e5ff00;  */
+  overflow: hidden;
+  z-index: 400;
+}
+
+/* .main_container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+} */
+
+.parallax-wrapper {
+  position: absolute;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  width: 100%;
+  height: 100vh;
+}
+
+.main_container img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.07);
+  /* width: 100%; */
+  height: 100%;
+  object-fit: contain;
+  /* box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.3); */
+  transition: transform 0.1s ease-out;
+  pointer-events: none;
+}
+
+.main_container .img_hover {
+  opacity: 0;
+}
+
+.parallax-wrapper .skyCity {
+  animation: bounce 4s ease-in-out infinite; /* 上下浮動動畫 */
+}
+
+/* 上下浮動的 keyframes 動畫 */
+@keyframes bounce {
+  0% {
+    transform: translate(-50%, -50%) translateY(0) scale(0.97); /* 初始位置，保持置中 */
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-6px) scale(0.98); /* 上移 10px */
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0) scale(0.97); /* 返回初始位置 */
+  }
+}
+
+.parallax-wrapper .cloud_left {
+  animation: moveCloud 4s ease-in-out infinite; /* 設定左右移動動畫 */
+}
+
+@keyframes moveCloud {
+  0% {
+    transform: translate(-50%, -50%) translate(0px, -3px); /* 開始時向左偏移 */
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(6px, 1px); /* 移動到右邊 */
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(0px, -3px); /* 返回到左邊 */
+  }
+}
+
+.parallax-wrapper .cloud_right {
+  animation: moveCloud2 3.7s ease-in-out infinite; /* 設定左右移動動畫 */
+}
+
+@keyframes moveCloud2 {
+  0% {
+    transform: translate(-50%, -50%) translate(-3px, 3px); /* 開始時向左偏移 */
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(3px, -1px); /* 移動到右邊 */
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(-3px, 3px); /* 返回到左邊 */
+  }
+}
+
+.parallax-wrapper .sky {
+  animation: bounceSky 6s ease-in-out infinite; /* 上下浮動動畫 */
+}
+
+/* 上下浮動的 keyframes 動畫 */
+@keyframes bounceSky {
+  0% {
+    transform: translate(-50%, -50%) translateY(-15px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-20px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(-15px);
+  }
+}
+
+.parallax-wrapper .base {
+  animation: scaleBase 8s ease-in-out infinite; /* 設定放大縮小的動畫 */
+}
+
+/* 定義放大縮小的動畫 */
+@keyframes scaleBase {
+  0% {
+    transform: translate(-50%, -50%) scale(1); /* 初始狀態，原始大小 */
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.017); /* 中間狀態，放大 */
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1); /* 結束狀態，回到原始大小 */
+  }
+}
+
+.parallax-wrapper .pillar_left {
+  animation: movePillar 8s ease-in-out infinite; /* 設定左右移動動畫 */
+}
+
+@keyframes movePillar {
+  0% {
+    transform: translate(-50%, -50%) translateX(-1px) scale(1.07);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateX(4px) scale(1.07);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateX(-1px) scale(1.07);
+  }
+}
+
+.parallax-wrapper .pillar_right {
+  animation: movePillar2 8s ease-in-out infinite; /* 設定左右移動動畫 */
+}
+
+@keyframes movePillar2 {
+  0% {
+    transform: translate(-50%, -50%) translateX(1px) scale(1.07);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateX(-4px) scale(1.07);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateX(1px) scale(1.07);
+  }
+}
+
+.parallax-wrapper .book,
+.parallax-wrapper .boy,
+.parallax-wrapper .lamp,
+.parallax-wrapper .platform {
+  animation: bouncePlatform 8s ease-in-out infinite; /* 上下浮動動畫 */
+}
+
+/* 上下浮動的 keyframes 動畫 */
+@keyframes bouncePlatform {
+  0% {
+    transform: translate(-50%, -50%) translateY(0px) scale(1.07);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-2px) scale(1.07);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0px) scale(1.07);
+  }
+}
+
+/*--------- hover area  -----------*/
+
+.hoverAreaSkyCity {
+  position: absolute;
+  /* width: 220px; */
+  /* height: 270px; */
+  width: 16.5vw;
+  height: 40vh;
+  top: 10%;
+  left: 42%;
+  background-color: rgba(255, 255, 255, 0);
+  /* background-color: #fff; */
+
+  z-index: 101;
+  pointer-events: auto;
+  border-radius: 50%;
+}
+
+.hoverAreaSkyCity:hover + .skyCity {
+  opacity: 1;
+}
+
+.hoverAreaBoy1 {
+  position: absolute;
+  width: 9vw;
+  height: 40vh;
+  bottom: 5%;
+  left: 45%;
+  background-color: rgba(255, 255, 255, 0);
+  /* background-color: #fff; */
+  z-index: 101;
+  pointer-events: auto;
+  border-radius: 50%;
+}
+
+.hoverAreaBoy2 {
+  position: absolute;
+  width: 30vw;
+  height: 20vh;
+  bottom: 3%;
+  left: 30%;
+  background-color: rgba(255, 255, 255, 0);
+  /* background-color: yellow; */
+  z-index: 101;
+  pointer-events: auto;
+  border-radius: 50%;
+}
+
+.hoverAreaBoy:hover + .boy {
+  opacity: 1;
+}
+
+.hoverAreaLamp {
+  position: absolute;
+  width: 9vw;
+  height: 30vh;
+  bottom: 5%;
+  left: 18.6%;
+  background-color: rgba(255, 255, 255, 0);
+  /* background-color: #fff; */
+  z-index: 101;
+  pointer-events: auto;
+  border-radius: 50%;
+  transition: left 0.3s ease-out; /* 增加平滑過渡 */
+}
+
+.hoverAreaLamp:hover + .lamp {
+  opacity: 1;
+}
+
+.hoverAreaBook {
+  position: absolute;
+  width: 26vw;
+  height: 22vh;
+  bottom: 3%;
+  right: 13%;
+  background-color: rgba(255, 255, 255, 0);
+  /* background-color: #fff; */
+  z-index: 101;
+  pointer-events: auto;
+  border-radius: 50%;
+  transition: left 0.3s ease-out; /* 增加平滑過渡 */
+}
+
+.hoverAreaBook:hover + .book {
+  opacity: 1;
+}
+
+/* -----------------HoverArea RWD------------------ */
+
+@media (max-width: 1000px) {
+  .hoverAreaSkyCity {
+    width: 22vw;
+    height: 40vh;
+    left: 43%;
+  }
+  .hoverAreaBoy1 {
+    width: 11vw;
+    left: 46%;
+  }
+  .hoverAreaBoy2 {
+    width: 38vw;
+    left: 31%;
+  }
+
+  .hoverAreaLamp {
+    width: 11vw;
+  }
+  .hoverAreaBook {
+    width: 32vw;
+  }
+}
+
+/* @media (max-width: 768px) {
+  .hoverAreaSkyCity {
+    width: 25vw;
+    height: 40vh;
+  }
+} */
+
+/*--------- hover area 的運用 -----------*/
+
+/* .hover_area {
+  position: absolute;
+  top: 0;
+  left: 350px;
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  z-index: 2;
+}
+
+.hover_area:hover + .image {
+  opacity: 0;
+} */
+
+/* ---------------------------------- */
