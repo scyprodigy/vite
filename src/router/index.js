@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Phantasia from "../views/Phantasia.vue";
 import About from "../views/About.vue";
+import RewardCard from "../views/RewardCard.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,12 @@ const router = createRouter({
       path: "/About",
       name: "about",
       component: About,
+    },
+
+    {
+      path: "/RewardCard",
+      name: "RewardCard",
+      component: RewardCard,
     },
 
     // {
