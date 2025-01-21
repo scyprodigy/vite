@@ -1,3 +1,8 @@
+@use "sass:map";
+
+// mixin
+@use "../mixin/mixin" as mixin;
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +10,7 @@
 }
 
 .wrapper {
-  /* width: 100%; */
+  width: 100%;
   height: 100vh;
   position: relative;
   overflow: hidden;
@@ -14,40 +19,33 @@
 
 .positionArea {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  @include mixin.imgCenter();
   width: calc(2545 / 1257 * 100vh); /* 根據螢幕高度調整寬度 */
   height: 100vh; /* 高度為螢幕高度 */
-  /* background-color: #e5ff00; */
+  // background-color: #e5ff00;
   overflow: hidden;
   z-index: 400;
 }
 
 .parallax-wrapper {
   position: absolute;
-  /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
   width: 100%;
   height: 100vh;
 }
 
 .main_container img {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.07);
-  /* width: 100%; */
+  @include mixin.imgCenter();
+  // transform: scale(1.07);
   height: 100%;
   object-fit: contain;
-  /* box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.3); */
   transition: transform 0.1s ease-out;
-  pointer-events: none;
+  // pointer-events: none;
 }
 
 .main_container .img_hover {
   opacity: 0;
+  transition: opacity 0.4s ease-out;
 }
 
 .parallax-wrapper .skyCity {
@@ -189,14 +187,12 @@
 
 .hoverAreaSkyCity {
   position: absolute;
-  /* width: 220px; */
-  /* height: 270px; */
   width: 16.5vw;
   height: 40vh;
   top: 10%;
   left: 42%;
   background-color: rgba(255, 255, 255, 0);
-  /* background-color: #fff; */
+  // background-color: #fff;
 
   z-index: 101;
   pointer-events: auto;
@@ -214,7 +210,7 @@
   bottom: 5%;
   left: 45%;
   background-color: rgba(255, 255, 255, 0);
-  /* background-color: #fff; */
+  // background-color: #fff;
   z-index: 101;
   pointer-events: auto;
   border-radius: 50%;
@@ -227,7 +223,7 @@
   bottom: 3%;
   left: 30%;
   background-color: rgba(255, 255, 255, 0);
-  /* background-color: yellow; */
+  // background-color: yellow;
   z-index: 101;
   pointer-events: auto;
   border-radius: 50%;
@@ -244,11 +240,10 @@
   bottom: 5%;
   left: 18.6%;
   background-color: rgba(255, 255, 255, 0);
-  /* background-color: #fff; */
+  // background-color: #fff;
   z-index: 101;
   pointer-events: auto;
   border-radius: 50%;
-  transition: left 0.3s ease-out; /* 增加平滑過渡 */
 }
 
 .hoverAreaLamp:hover + .lamp {
@@ -262,11 +257,10 @@
   bottom: 3%;
   right: 13%;
   background-color: rgba(255, 255, 255, 0);
-  /* background-color: #fff; */
+  // background-color: #fff;
   z-index: 101;
   pointer-events: auto;
   border-radius: 50%;
-  transition: left 0.3s ease-out; /* 增加平滑過渡 */
 }
 
 .hoverAreaBook:hover + .book {
@@ -275,11 +269,11 @@
 
 /* -----------------HoverArea RWD------------------ */
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .hoverAreaSkyCity {
     width: 22vw;
     height: 40vh;
-    left: 43%;
+    left: 41.5%;
   }
   .hoverAreaBoy1 {
     width: 11vw;
@@ -292,6 +286,7 @@
 
   .hoverAreaLamp {
     width: 11vw;
+    left: 18.3%;
   }
   .hoverAreaBook {
     width: 32vw;
