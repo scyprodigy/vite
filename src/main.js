@@ -1,4 +1,4 @@
-import "./Assets/style/css/global.css";
+import "./Assets/css/global.css";
 
 import { createApp } from "vue";
 import { createPinia } from "pinia";
