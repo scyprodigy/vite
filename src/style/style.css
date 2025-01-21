@@ -4,13 +4,8 @@
   box-sizing: border-box;
 }
 
-/* body {
- 
-  background-color: black;
-} */
-
 .wrapper {
-  width: 100%;
+  /* width: 100%; */
   height: 100vh;
   position: relative;
   overflow: hidden;
@@ -24,18 +19,10 @@
   transform: translate(-50%, -50%);
   width: calc(2545 / 1257 * 100vh); /* 根據螢幕高度調整寬度 */
   height: 100vh; /* 高度為螢幕高度 */
-  /* background-color: #e5ff00;  */
+  /* background-color: #e5ff00; */
   overflow: hidden;
   z-index: 400;
 }
-
-/* .main_container {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  pointer-events: none;
-} */
 
 .parallax-wrapper {
   position: absolute;

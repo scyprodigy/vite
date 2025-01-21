@@ -1,0 +1,26 @@
+@use "sass:map"; //sass 3.0的引用函式的寫法
+
+// base
+@import "base/var";
+@import "base/font";
+@import "base/color";
+@import "base/others";
+
+// mixin
+@import "mixin/mixin";
+
+// component
+@import "component/btn";
+@import "component/form";
+@import "component/table";
+
+// layout
+@import "layout/header";
+@import "layout/footer";
+@import "layout/content";
+
+// page
+@import "page/index";
+@import "page/about";
+
+// 一定要照順序小到大，有權重問題
