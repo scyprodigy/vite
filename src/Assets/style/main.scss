@@ -1,24 +1,43 @@
 @use "sass:map"; //sass 3.0的引用函式的寫法
 
 // base
-@use "base/var";
-@use "base/font";
-@use "base/color";
-@use "base/others";
+@import "./base/var";
+@import "./base/font";
+@import "./base/color";
+@import "./base/others";
 
 // mixin
-@use "./mixin/mixin";
+@import "./mixin/mixin";
 
 // component
-@use "component/btn";
-@use "component/form";
-@use "component/table";
+@import "./component/btn";
+@import "./component/form";
+@import "./component/icon";
+@import "./component/sidebar";
+@import "./component/table";
 
-// layout
-@use "layout/header";
-@use "layout/footer";
-@use "layout/content";
+// layout  (因為已經拉出成共用組件component，所以這邊好像不需要)
+// @import "./layout/header";
+// @import "./layout/footer";
+// @import "./layout/content";
 
 // page
+@import "./page/btnFamily";
+@import "./page/create";
 
 // 一定要照順序小到大，有權重問題
+
+.wrapper {
+  max-width: 1440px;
+  width: 100%;
+  @include wrapperBgc();
+  padding: 5px;
+  border: $baseBlue 10px solid;
+}
+
+//大家撰寫自己的sass時，請按照下方方式把自己的code包起來，到時合併時比較不會亂掉
+
+//================首頁(宏育)==================
+//程式碼寫這
+
+//============================================

@@ -38,71 +38,76 @@ const router = createRouter({
       loading: Loading,
     },
 
+    //===================個人頁面(書櫃、換裝、集點)=======================
     {
       path: "/MyCabin",
-      component: DayLayout, // 使用共用佈局
+      component: DayLayout, // 使用共用佈局(header和footer) 在src>views>DayLayout
       children: [
         {
           path: "",
-          name: "MyCabin",
+          name: "MyCabin", //個人頁面入口  /MyCabin
           component: () => import("@/views/MyCabin/MyCabin.vue"),
         },
         {
-          path: "MyBookcase",
+          path: "MyBookcase", //書櫃 /MyCabin/MyBookcase
           name: "MyBookcase",
           component: () => import("@/views/MyCabin/MyBookcase.vue"),
         },
         {
-          path: "MyColset",
+          path: "MyColset", //換裝 /MyCabin/MyColset
           name: "MyColset",
           component: () => import("@/views/MyCabin/MyColset.vue"),
         },
         {
-          path: "MyRewardCard",
+          path: "MyRewardCard", //集點頁面 /MyCabin/MyRewardCard
           name: "MyRewardCard",
           component: () => import("@/views/MyCabin/MyRewardCard.vue"),
         },
       ],
     },
 
+    //========================商品頁==========================
+
     {
-      path: "/Products",
-      component: DayLayout, // 使用共用佈局
+      path: "/Products", //商品頁
+      component: DayLayout, // 使用共用佈局(header和footer) 在src>views>DayLayout
       children: [
         {
-          path: "",
-          name: "productList", // 商品列表頁
+          path: "", // 商品列表頁  /Products
+          name: "productList",
           component: () => import("@/views/Products/Products.vue"),
         },
         {
-          path: ":id", // 商品詳細頁
+          path: ":id", // 商品詳細頁  /Products/:id   (:id的位置到時候會帶入商品編號)
           name: "productInfo",
           component: () => import("@/views/Products/ProductsInfo.vue"),
         },
         {
-          path: ":id/read", // 進入線上閱讀頁
+          path: ":id/read", // 進入閱讀頁  /Products/:id/read
           name: "productRead",
           component: () => import("@/views/Products/ProductsRead.vue"),
         },
       ],
     },
 
+    //=========================創作頁============================
+
     {
       path: "/CreateProject",
-      component: DayLayout, // 使用共用佈局 DayLayout
+      component: DayLayout, // 使用共用佈局(header和footer) 在src>views>DayLayout
       children: [
         {
           path: "",
-          component: ProjectMenu, // 風琴選單
+          component: ProjectMenu, // 使用共用佈局(風琴選單) 在components>ProjectMenu
           children: [
             {
-              path: "",
+              path: "", // 創作頁我的專案   /CreateProject
               name: "CreateProject",
               component: () =>
                 import("@/views/CreateProject/CreateProject.vue"),
             },
             {
-              path: "Draft",
+              path: "Draft", // 創作頁草稿   /CreateProject/Draft
               name: "Draft",
               component: () => import("@/views/CreateProject/Draft.vue"),
             },
@@ -113,25 +118,25 @@ const router = createRouter({
 
     {
       path: "/Create",
-      component: DayLayout, // 使用共用佈局 DayLayout
+      component: DayLayout, // 使用共用佈局(header和footer) 在src>views>DayLayout
       children: [
         {
-          path: "",
+          path: "", //創作編輯頁面   /Create
           name: "Create",
           component: () => import("@/views/Project/Create/Create.vue"),
         },
         {
-          path: "CreateCover",
+          path: "CreateCover", //上傳封面  /Create/CreateCover
           name: "CreateCover",
           component: () => import("@/views/Project/Create/CreateCover.vue"),
         },
         {
-          path: "CreateInfo",
+          path: "CreateInfo", //上傳資訊  /Create/CreateInfo
           name: "CreateInfo",
           component: () => import("@/views/Project/Create/CreateInfo.vue"),
         },
         {
-          path: "CreateConfirm",
+          path: "CreateConfirm", //上傳確認發布  /Create/CreateConfirm
           name: "CreateConfirm",
           component: () => import("@/views/Project/Create/CreateConfirm.vue"),
         },
@@ -140,71 +145,84 @@ const router = createRouter({
 
     {
       path: "/MemberCenter",
-      component: DayLayout, // 使用共用佈局 DayLayout
+      component: DayLayout, // 使用共用佈局(header和footer) 在src>views>DayLayout
       children: [
         {
           path: "",
-          component: MemberCenterMenu, // 風琴選單
+          component: MemberCenterMenu, // 使用共用佈局(風琴選單) 在components>MemberCenterMenu
           children: [
             {
-              path: "",
+              path: "", //會員中心  /MemberCenter  (是否為會員用條件判斷寫在這一頁)
               name: "MemberCenter",
               component: () => import("@/views/MemberCenter/MemberCenter.vue"),
             },
             {
-              path: "MyPlanSubscribed",
+              path: "MyPlanSubscribed", //訂閱方案(會員)  /MemberCenter/MyPlanSubscribed
               name: "MyPlanSubscribed",
               component: () =>
                 import("@/views/MemberCenter/MyPlanSubscribed.vue"),
             },
             {
-              path: "MyPlanVisitor",
+              path: "MyPlanVisitor", //訂閱方案(訪客)  /MemberCenter/MyPlanVisitor
               name: "MyPlanVisitor",
               component: () => import("@/views/MemberCenter/MyPlanVisitor.vue"),
             },
             {
-              path: "MyPlanCancel",
+              path: "MyPlanCancel", //訂閱方案(取消訂閱)  /MemberCenter/MyPlanCancel
               name: "MyPlanCancel",
               component: () => import("@/views/MemberCenter/MyPlanCancel.vue"),
             },
             {
-              path: "SubscriptionStatus",
+              path: "SubscriptionStatus", //訂閱成功or失敗  /MemberCenter/SubscriptionStatus  (成功或失敗用條件判斷寫在這一頁)
               name: "SubscriptionStatus",
               component: () =>
                 import("@/views/MemberCenter/SubscriptionStatus.vue"),
             },
             {
-              path: "PurchaseHistory",
+              path: "PurchaseHistory", //訂閱歷史  /MemberCenter/PurchaseHistory
               name: "PurchaseHistory",
               component: () =>
                 import("@/views/MemberCenter/PurchaseHistory.vue"),
             },
 
             {
-              path: "MyProjects",
+              path: "MyProjects", //上架作品  /MemberCenter/MyProjects
               name: "MyProjects",
               component: () => import("@/views/MemberCenter/MyProjects.vue"),
             },
             {
-              path: "MyProjectsRemoved",
+              path: "MyProjectsRemoved", //下架作品  /MemberCenter/MyProjectsRemoved
               name: "MyProjectsRemoved",
               component: () =>
                 import("@/views/MemberCenter/MyProjectsRemoved.vue"),
             },
             {
-              path: "AccountSetting",
+              path: "AccountSetting", //帳號設定  /MemberCenter/AccountSetting
               name: "AccountSetting",
               component: () =>
                 import("@/views/MemberCenter/AccountSetting.vue"),
             },
             {
-              path: "FAQ",
+              path: "FAQ", //QA  /MemberCenter/FAQ
               name: "FAQ",
               component: () => import("@/views/MemberCenter/FAQ.vue"),
             },
           ],
         },
       ],
+    },
+
+    {
+      path: "/btnFmaily",
+      name: "test",
+      component: () => import("@/views/test/btnFmaily.vue"), // 懶加載(可以提升效能)
+      loading: Loading,
+    },
+    {
+      path: "/sidebar",
+      name: "sidebar",
+      component: () => import("@/views/test/sidebar.vue"), // 懶加載(可以提升效能)
+      loading: Loading,
     },
 
     // {
