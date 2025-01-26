@@ -1,7 +1,7 @@
 @use "sass:map";
 
 // mixin
-@use "../mixin/mixin" as mixin;
+@import "../mixin/mixin";
 
 * {
   margin: 0;
@@ -19,7 +19,7 @@
 
 .positionArea {
   position: absolute;
-  @include mixin.imgCenter();
+  @include imgCenter();
   width: calc(2545 / 1257 * 100vh); /* 根據螢幕高度調整寬度 */
   height: 100vh; /* 高度為螢幕高度 */
   // background-color: #e5ff00;
@@ -35,7 +35,7 @@
 
 .main_container img {
   position: absolute;
-  @include mixin.imgCenter();
+  @include imgCenter();
   // transform: scale(1.07);
   height: 100%;
   object-fit: contain;
