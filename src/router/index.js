@@ -213,15 +213,15 @@ const router = createRouter({
     },
 
     {
-      path: "/btnFmaily",
+      path: "/btnFmaily", //按鈕元件範例1  /btnFmaily
       name: "test",
-      component: () => import("@/views/test/btnFmaily.vue"), // 懶加載(可以提升效能)
+      component: () => import("@/views/test/btnFmaily.vue"),
       loading: Loading,
     },
     {
-      path: "/sidebar",
+      path: "/sidebar", //按鈕元件範例2  /sidebar
       name: "sidebar",
-      component: () => import("@/views/test/sidebar.vue"), // 懶加載(可以提升效能)
+      component: () => import("@/views/test/sidebar.vue"),
       loading: Loading,
     },
 
