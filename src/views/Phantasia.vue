@@ -4,6 +4,8 @@
 
 <template>
   <div class="wrapper">
+    <img src="../Assets/Day/bookRows_bgi33.png" alt="" class="bgBook" />
+
     <div class="positionArea">
       <div class="main_container" ref="parallaxContainer">
         <div class="parallax-wrapper" data-depth="0.12">
@@ -35,11 +37,15 @@
             alt=""
             class="skyCity img_hover"
           />
-        </div>
-
-        <div class="parallax-wrapper" data-depth="0.1">
+          <img
+            src="../Assets/Day/storyBooks_scroll.png"
+            alt=""
+            class="storyBooks_scroll scroll"
+          />
           <img src="../Assets/Day/day_skyCity.png" alt="" class="skyCity" />
         </div>
+
+        <!-- <div class="parallax-wrapper" data-depth="0.1"></div> -->
 
         <div class="parallax-wrapper" data-depth="0.11">
           <img
@@ -88,11 +94,15 @@
             alt=""
             class="boy img_hover"
           />
-        </div>
-
-        <div class="parallax-wrapper" data-depth="0.05">
+          <img
+            src="../Assets/Day/myCabin_scroll.png"
+            alt=""
+            class="myCabin_scroll scroll"
+          />
           <img src="../Assets/Day/boy_day.png" alt="" class="boy" />
         </div>
+
+        <!-- <div class="parallax-wrapper" data-depth="0.05"></div> -->
         <div class="parallax-wrapper" data-depth="0.05">
           <div class="hoverAreaBook" @click="ToAbout"></div>
 

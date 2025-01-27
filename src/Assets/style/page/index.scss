@@ -9,6 +9,14 @@
   box-sizing: border-box;
 }
 
+.bgBook {
+  height: 100vh;
+  position: absolute;
+  z-index: 1000;
+  @include imgCenter();
+  pointer-events: none;
+}
+
 .wrapper {
   width: 100%;
   height: 100vh;
@@ -33,6 +41,10 @@
   height: 100vh;
 }
 
+.main_container {
+  position: relative;
+}
+
 .main_container img {
   position: absolute;
   @include imgCenter();
@@ -45,12 +57,27 @@
 
 .main_container .img_hover {
   opacity: 0;
-  transition: opacity 0.4s ease-out;
+  transition: opacity 0.6s ease-out;
+}
+
+.main_container .scroll {
+  opacity: 0;
+  transition: opacity 1.2s ease-out;
+  transition-delay: 0.2s;
+  animation: bounceScroll 3s ease-in-out infinite; /* 上下浮動動畫 */
+  position: absolute;
+  z-index: 1000;
 }
 
 .parallax-wrapper .skyCity {
   animation: bounce 4s ease-in-out infinite; /* 上下浮動動畫 */
+  position: absolute;
+  z-index: 500;
 }
+
+// .storyBooks_scroll {
+
+// }
 
 /* 上下浮動的 keyframes 動畫 */
 @keyframes bounce {
@@ -62,6 +89,18 @@
   }
   100% {
     transform: translate(-50%, -50%) translateY(0) scale(0.97); /* 返回初始位置 */
+  }
+}
+
+@keyframes bounceScroll {
+  0% {
+    transform: translate(-50%, -50%) translateY(-13px) scale(0.97); /* 初始位置，保持置中 */
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(0) scale(0.98); /* 上移 10px */
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(-13px) scale(0.97); /* 返回初始位置 */
   }
 }
 
@@ -203,6 +242,10 @@
   opacity: 1;
 }
 
+.hoverAreaSkyCity:hover + .skyCity ~ .storyBooks_scroll {
+  opacity: 1;
+}
+
 .hoverAreaBoy1 {
   position: absolute;
   width: 9vw;
@@ -230,6 +273,10 @@
 }
 
 .hoverAreaBoy:hover + .boy {
+  opacity: 1;
+}
+
+.hoverAreaBoy:hover + .boy ~ .myCabin_scroll {
   opacity: 1;
 }
 
