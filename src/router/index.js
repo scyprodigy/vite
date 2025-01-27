@@ -4,6 +4,7 @@ import Loading from "../components/Loading.vue";
 import DayLayout from "../views/DayLayout.vue";
 import ProjectMenu from "../components/ProjectMenu.vue";
 import MemberCenterMenu from "../components/MemberCenterMenu.vue";
+import BackStageMenu from "../components/BackStageMenu.vue";
 
 //==================因為下方使用懶加載，這段不需要====================
 
@@ -143,6 +144,8 @@ const router = createRouter({
       ],
     },
 
+    // ======================會員中心=======================
+
     {
       path: "/MemberCenter",
       component: DayLayout, // 使用共用佈局(header和footer) 在src>views>DayLayout
@@ -211,6 +214,32 @@ const router = createRouter({
         },
       ],
     },
+
+    // ======================後台=======================
+
+    {
+      path: "/BKMember",
+      component: BackStageMenu, // 使用共用佈局風琴選單  請寫在src>components>BackStageMenu.vue
+      children: [
+        {
+          path: "", //會員管理   /BKMember
+          name: "BKMember",
+          component: () => import("@/views/Backstage/BackstageMember.vue"),
+        },
+        {
+          path: "BKInfo", //資訊管理  /BKMember/BKInfo
+          name: "BackstageInfo",
+          component: () => import("@/views/Backstage/BackstageInfo.vue"),
+        },
+        {
+          path: "BKProduct", //商品管理  /BKMember/BKProduct
+          name: "BackstageProduct",
+          component: () => import("@/views/Backstage/BackstageProduct.vue"),
+        },
+      ],
+    },
+
+    // ======================按鈕使用教學=========================
 
     {
       path: "/btnFmaily", //按鈕元件範例1  /btnFmaily
