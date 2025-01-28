@@ -69,6 +69,40 @@
   z-index: 1000;
 }
 
+.main_container .magic {
+  opacity: 0;
+  transition: opacity 0.9s ease-out;
+}
+
+.main_container .magic img {
+  position: absolute;
+  animation-fill-mode: forwards;
+}
+
+.magic .about_magic1 {
+  animation: magicCycle 7.9s infinite 0.9s;
+}
+
+.magic .about_magic2 {
+  animation: magicCycle 7.9s infinite 2.9s;
+}
+
+.magic .about_magic3 {
+  animation: magicCycle 7.9s infinite 4.9s;
+}
+
+@keyframes magicCycle {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .parallax-wrapper .skyCity {
   animation: bounce 4s ease-in-out infinite; /* 上下浮動動畫 */
   position: absolute;
@@ -311,6 +345,14 @@
 }
 
 .hoverAreaBook:hover + .book {
+  opacity: 1;
+}
+
+.hoverAreaBook:hover + .book ~ .about_scroll {
+  opacity: 1;
+}
+
+.hoverAreaBook:hover ~ .book ~ .magic {
   opacity: 1;
 }
 

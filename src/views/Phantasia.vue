@@ -105,16 +105,40 @@
         <!-- <div class="parallax-wrapper" data-depth="0.05"></div> -->
         <div class="parallax-wrapper" data-depth="0.05">
           <div class="hoverAreaBook" @click="ToAbout"></div>
-
           <img
             src="../Assets/Day/book_day_hover.png"
             alt=""
             class="book img_hover"
           />
-        </div>
-        <div class="parallax-wrapper" data-depth="0.05">
+          <img
+            src="../Assets/Day/about_scroll.png"
+            alt=""
+            class="about_scroll scroll"
+          />
+          <div class="magic">
+            <img
+              src="../Assets/Day/about_magic1.png"
+              alt=""
+              class="about_magic1"
+              style="z-index: 800"
+            />
+            <img
+              src="../Assets/Day/about_magic2.png"
+              alt=""
+              class="about_magic2"
+              style="z-index: 700"
+            />
+            <img
+              src="../Assets/Day/about_magic3.png"
+              alt=""
+              class="about_magic3"
+              style="z-index: 600"
+            />
+          </div>
+
           <img src="../Assets/Day/book_day.png" alt="" class="book" />
         </div>
+        <!-- <div class="parallax-wrapper" data-depth="0.05"></div> -->
       </div>
     </div>
   </div>
