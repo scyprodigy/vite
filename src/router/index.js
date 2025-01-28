@@ -124,22 +124,25 @@ const router = createRouter({
         {
           path: "", //創作編輯頁面   /Create
           name: "Create",
-          component: () => import("@/views/Project/Create/Create.vue"),
+          component: () => import("@/views/CreateProject/Create/Create.vue"),
         },
         {
           path: "CreateCover", //上傳封面  /Create/CreateCover
           name: "CreateCover",
-          component: () => import("@/views/Project/Create/CreateCover.vue"),
+          component: () =>
+            import("@/views/CreateProject/Create/CreateCover.vue"),
         },
         {
           path: "CreateInfo", //上傳資訊  /Create/CreateInfo
           name: "CreateInfo",
-          component: () => import("@/views/Project/Create/CreateInfo.vue"),
+          component: () =>
+            import("@/views/CreateProject/Create/CreateInfo.vue"),
         },
         {
           path: "CreateConfirm", //上傳確認發布  /Create/CreateConfirm
           name: "CreateConfirm",
-          component: () => import("@/views/Project/Create/CreateConfirm.vue"),
+          component: () =>
+            import("@/views/CreateProject/Create/CreateConfirm.vue"),
         },
       ],
     },
