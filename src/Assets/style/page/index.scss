@@ -267,17 +267,12 @@
 /*--------- hover area  -----------*/
 
 .hoverAreaSkyCity {
-  position: absolute;
+  @include hoverArea();
   width: 16.5vw;
   height: 40vh;
   top: 10%;
   left: 42%;
-  background-color: rgba(255, 255, 255, 0);
   // background-color: #fff;
-
-  z-index: 101;
-  pointer-events: auto;
-  border-radius: 50%;
 }
 
 .hoverAreaSkyCity:hover + .skyCity {
@@ -289,29 +284,21 @@
 }
 
 .hoverAreaBoy1 {
-  position: absolute;
+  @include hoverArea();
   width: 9vw;
   height: 40vh;
   bottom: 5%;
   left: 45%;
-  background-color: rgba(255, 255, 255, 0);
   // background-color: #fff;
-  z-index: 101;
-  pointer-events: auto;
-  border-radius: 50%;
 }
 
 .hoverAreaBoy2 {
-  position: absolute;
+  @include hoverArea();
   width: 30vw;
   height: 20vh;
   bottom: 3%;
   left: 30%;
-  background-color: rgba(255, 255, 255, 0);
   // background-color: yellow;
-  z-index: 101;
-  pointer-events: auto;
-  border-radius: 50%;
 }
 
 .hoverAreaBoy:hover + .boy {
@@ -323,16 +310,12 @@
 }
 
 .hoverAreaLamp {
-  position: absolute;
+  @include hoverArea();
   width: 9vw;
   height: 30vh;
   bottom: 5%;
   left: 18.6%;
-  background-color: rgba(255, 255, 255, 0);
   // background-color: #fff;
-  z-index: 101;
-  pointer-events: auto;
-  border-radius: 50%;
 }
 
 .hoverAreaLamp:hover + .lamp {
@@ -344,16 +327,12 @@
 }
 
 .hoverAreaBook {
-  position: absolute;
+  @include hoverArea();
   width: 26vw;
   height: 22vh;
   bottom: 3%;
   right: 13%;
-  background-color: rgba(255, 255, 255, 0);
   // background-color: #fff;
-  z-index: 101;
-  pointer-events: auto;
-  border-radius: 50%;
 }
 
 .hoverAreaBook:hover + .book {
@@ -473,13 +452,13 @@
 
 @keyframes bounceSky_night_star {
   0% {
-    transform: translate(-50%, -50%) translateY(12px) scale(1.025);
+    transform: translate(-50%, -50%) translateY(13px) scale(1.025);
   }
   50% {
-    transform: translate(-50%, -50%) translateY(9px) scale(1.025);
+    transform: translate(-50%, -50%) translateY(7px) scale(1.025);
   }
   100% {
-    transform: translate(-50%, -50%) translateY(12px) scale(1.025);
+    transform: translate(-50%, -50%) translateY(13px) scale(1.025);
   }
 }
 
@@ -496,5 +475,54 @@
   }
   100% {
     transform: translate(-50%, -50%) translateY(3px) scale(1.015);
+  }
+}
+
+// ==================hoverArea======================
+
+.hoverAreaLeftCastle {
+  @include hoverArea();
+  width: 17vw;
+  height: 30vh;
+  top: 28%;
+  left: 29.5%;
+  // background-color: #fff;
+}
+
+.hoverAreaLeftCastle:hover + .left_castle {
+  opacity: 1;
+}
+
+.hoverAreaLeftCastle:hover + .left_castle ~ .creationCenter_scroll {
+  opacity: 1;
+}
+
+.hoverAreaRightCastle {
+  @include hoverArea();
+  width: 19vw;
+  height: 40vh;
+  top: 40%;
+  right: 28.5%;
+  // background-color: #fff;
+}
+
+.hoverAreaRightCastle:hover + .right_castle {
+  opacity: 1;
+}
+
+.hoverAreaRightCastle:hover + .right_castle ~ .memberCenter_scroll {
+  opacity: 1;
+}
+
+/* -----------------HoverArea RWD------------------ */
+
+@media (max-width: 1200px) {
+  .hoverAreaLeftCastle {
+    width: 21vw;
+    left: 31%;
+  }
+  .hoverAreaRightCastle {
+    width: 24vw;
+    right: 30%;
   }
 }

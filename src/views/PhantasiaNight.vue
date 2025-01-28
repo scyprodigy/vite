@@ -13,11 +13,11 @@
         <div class="parallax-wrapper" data-depth="0.12">
           <img src="../Assets/Day/night_river.png" alt="" class="" />
         </div>
-        <div class="parallax-wrapper" data-depth="0.1">
+        <div class="parallax-wrapper" data-depth="0.25">
           <img
             src="../Assets/Day/sky_night_base.png"
             alt=""
-            class="sky_night"
+            class="sky_night_moon"
           />
         </div>
         <div class="parallax-wrapper" data-depth="0.15">
@@ -46,10 +46,34 @@
           />
         </div>
         <div class="parallax-wrapper" data-depth="0.115">
+          <a href="" class="hoverAreaLeftCastle"></a>
+          <img
+            src="../Assets/Day/left_castle_hover.png"
+            alt=""
+            class="left_castle img_hover"
+            style="z-index: 400"
+          />
+          <img
+            src="../Assets/Day/creationCenter_scroll.png"
+            alt=""
+            class="creationCenter_scroll scroll"
+          />
           <img src="../Assets/Day/left_castle.png" alt="" class="left_castle" />
         </div>
 
         <div class="parallax-wrapper" data-depth="0.13">
+          <a href="" class="hoverAreaRightCastle"></a>
+          <img
+            src="../Assets/Day/Right_castle_hover.png"
+            alt=""
+            class="right_castle img_hover"
+            style="z-index: 400"
+          />
+          <img
+            src="../Assets/Day/memberCenter_scroll.png"
+            alt=""
+            class="memberCenter_scroll scroll"
+          />
           <img
             src="../Assets/Day/right_castle.png"
             alt=""

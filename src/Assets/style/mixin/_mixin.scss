@@ -5,6 +5,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin hoverArea() {
+  position: absolute;
+  z-index: 1000;
+  pointer-events: auto;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0);
+}
 //====================================
 // ---------------
 // 背景+邊框
