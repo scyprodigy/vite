@@ -69,13 +69,17 @@
   z-index: 1000;
 }
 
+.about_scroll {
+  transition-delay: 0.35s !important;
+}
+
 .main_container .magic {
   opacity: 0;
   position: absolute;
   z-index: 920;
   width: 100%;
   height: 100vh;
-  transition: opacity 0.9s ease-out;
+  transition: opacity 0.6s ease-out;
 }
 
 .main_container .magic img {
@@ -372,18 +376,94 @@
       height: 40vh;
     }
   } */
-/*--------- hover area 的運用 -----------*/
-/* .hover_area {
-    position: absolute;
-    top: 0;
-    left: 350px;
-    width: 100px;
-    height: 100px;
-    opacity: 0;
-    z-index: 2;
-  }
+/* ============================夜晚=============================== */
+.parallax-wrapper .left_castle {
+  animation: movecastle 4s ease-in-out infinite; /* 設定左右移動動畫 */
+}
 
-  .hover_area:hover + .image {
-    opacity: 0;
-  } */
-/* ---------------------------------- *//*# sourceMappingURL=index.css.map */
+@keyframes movecastle {
+  0% {
+    transform: translate(-50%, -50%) translate(2px, 5px) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(2px, 5px) scale(1.004);
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(2px, 5px) scale(1);
+  }
+}
+.parallax-wrapper .right_castle {
+  animation: movecastle2 4s ease-in-out infinite; /* 設定左右移動動畫 */
+}
+
+@keyframes movecastle2 {
+  0% {
+    transform: translate(-50%, -50%) translate(2px, 4px) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) translate(2px, 4px) scale(1.008);
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(2px, 4px) scale(1);
+  }
+}
+.parallax-wrapper .sky_night {
+  animation: bounceSky_night 9s ease-in-out infinite;
+}
+
+@keyframes bounceSky_night {
+  0% {
+    transform: translate(-50%, -50%) translateY(5px) scale(1.025);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(10px) scale(1.025);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(5px) scale(1.025);
+  }
+}
+.parallax-wrapper .sky_night_plantent {
+  animation: bounceSky_night_plantent 4s ease-in-out infinite;
+}
+
+@keyframes bounceSky_night_plantent {
+  0% {
+    transform: translate(-50%, -50%) translateY(6px) scale(1.025);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(13px) scale(1.025);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(6px) scale(1.025);
+  }
+}
+.parallax-wrapper .sky_night_star {
+  animation: bounceSky_night_star 4.5s ease-in-out infinite;
+}
+
+@keyframes bounceSky_night_star {
+  0% {
+    transform: translate(-50%, -50%) translateY(12px) scale(1.025);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(9px) scale(1.025);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(12px) scale(1.025);
+  }
+}
+.parallax-wrapper .sky_night_moon {
+  animation: bounceSky_night_moon 7.5s ease-in-out infinite;
+}
+
+@keyframes bounceSky_night_moon {
+  0% {
+    transform: translate(-50%, -50%) translateY(3px) scale(1.015);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(10px) scale(1.025);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(3px) scale(1.015);
+  }
+}/*# sourceMappingURL=index.css.map */

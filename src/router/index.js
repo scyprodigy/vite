@@ -33,6 +33,12 @@ const router = createRouter({
       loading: Loading,
     },
     {
+      path: "/Night",
+      name: "Night",
+      component: () => import("@/views/PhantasiaNight.vue"), // 懶加載(可以提升效能)
+      loading: Loading,
+    },
+    {
       path: "/About",
       name: "about",
       component: () => import("@/views/About.vue"),

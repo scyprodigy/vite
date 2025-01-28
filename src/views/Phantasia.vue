@@ -3,6 +3,8 @@
 </style>
 
 <template>
+  <!-- ===========================白天=========================== -->
+
   <div class="wrapper">
     <img src="../Assets/Day/bookRows_bgi33.png" alt="" class="bgBook" />
 
@@ -78,12 +80,12 @@
             alt=""
             class="lamp img_hover"
           />
-          <img
+          <!-- <img
             src="../Assets/Day/lamp_night.png"
             alt=""
             class="lamp img_hover lamp_night"
             style="z-index: 200"
-          />
+          /> -->
           <img src="../Assets/Day/lamp_day.png" alt="" class="lamp" />
         </div>
 
@@ -122,19 +124,19 @@
           />
           <div class="magic">
             <img
-              src="../Assets/Day/about_magic1.png"
+              src="../Assets/Day/day_magic1.png"
               alt=""
               class="about_magic1"
               style="z-index: 920"
             />
             <img
-              src="../Assets/Day/about_magic2.png"
+              src="../Assets/Day/day_magic2.png"
               alt=""
               class="about_magic2"
               style="z-index: 910"
             />
             <img
-              src="../Assets/Day/about_magic3.png"
+              src="../Assets/Day/day_magic3.png"
               alt=""
               class="about_magic3"
               style="z-index: 900"
