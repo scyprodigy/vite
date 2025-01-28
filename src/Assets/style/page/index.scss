@@ -71,6 +71,10 @@
 
 .main_container .magic {
   opacity: 0;
+  position: absolute;
+  z-index: 920;
+  width: 100%;
+  height: 100vh;
   transition: opacity 0.9s ease-out;
 }
 
@@ -80,15 +84,15 @@
 }
 
 .magic .about_magic1 {
-  animation: magicCycle 7.9s infinite 0.9s;
+  animation: magicCycle 9s infinite;
 }
 
 .magic .about_magic2 {
-  animation: magicCycle 7.9s infinite 2.9s;
+  animation: magicCycle 9s infinite 2.2s;
 }
 
 .magic .about_magic3 {
-  animation: magicCycle 7.9s infinite 4.9s;
+  animation: magicCycle 9s infinite 5.7s;
 }
 
 @keyframes magicCycle {
@@ -328,6 +332,10 @@
 }
 
 .hoverAreaLamp:hover + .lamp {
+  opacity: 1;
+}
+
+.hoverAreaLamp:hover + .lamp ~ .lamp_night {
   opacity: 1;
 }
 
