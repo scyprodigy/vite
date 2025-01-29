@@ -3,85 +3,36 @@
 </style>
 
 <template>
-  <!-- ===========================夜晚=========================== -->
+  <!-- ===========================白天=========================== -->
 
   <div class="wrapper">
-    <img src="../Assets/Day/bookRows_bgi_night.png" alt="" class="bgBook" />
+    <img src="../Assets/Day/bookRows_bgi_day.png" alt="" class="bgBook" />
 
     <div class="positionArea">
       <div class="main_container" ref="parallaxContainer">
         <div class="parallax-wrapper" data-depth="0.12">
-          <img src="../Assets/Day/night_river.png" alt="" class="" />
+          <img src="../Assets/Day/day_base.png" alt="" class="base" />
         </div>
-        <div class="parallax-wrapper" data-depth="0.25">
-          <img
-            src="../Assets/Day/sky_night_base.png"
-            alt=""
-            class="sky_night_moon"
-          />
-        </div>
-        <div class="parallax-wrapper" data-depth="0.15">
-          <img src="../Assets/Day/sky_night.png" alt="" class="sky_night" />
-        </div>
-        <div class="parallax-wrapper" data-depth="0.25">
-          <img
-            src="../Assets/Day/sky_night_moon.png"
-            alt=""
-            class="sky_night_moon"
-          />
+        <div class="parallax-wrapper" data-depth="0.1">
+          <img src="../Assets/Day/day_sky.png" alt="" class="sky" />
         </div>
         <div class="parallax-wrapper" data-depth="0.3">
           <img
-            src="../Assets/Day/sky_night_star.png"
+            src="../Assets/Day/day_cloudLeft.png"
             alt=""
-            class="sky_night_star"
+            class="cloud cloud_left"
           />
         </div>
 
-        <div class="parallax-wrapper" data-depth="0.4">
+        <div class="parallax-wrapper" data-depth="0.25">
           <img
-            src="../Assets/Day/sky_night_plantent.png"
+            src="../Assets/Day/day_cloudRight.png"
             alt=""
-            class="sky_night_plantent"
-          />
-        </div>
-        <div class="parallax-wrapper" data-depth="0.115">
-          <a href="" class="hoverAreaLeftCastle"></a>
-          <img
-            src="../Assets/Day/left_castle_hover.png"
-            alt=""
-            class="left_castle img_hover"
-            style="z-index: 400"
-          />
-          <img
-            src="../Assets/Day/creationCenter_scroll.png"
-            alt=""
-            class="creationCenter_scroll scroll"
-          />
-          <img src="../Assets/Day/left_castle.png" alt="" class="left_castle" />
-        </div>
-
-        <div class="parallax-wrapper" data-depth="0.13">
-          <a href="" class="hoverAreaRightCastle"></a>
-          <img
-            src="../Assets/Day/Right_castle_hover.png"
-            alt=""
-            class="right_castle img_hover"
-            style="z-index: 400"
-          />
-          <img
-            src="../Assets/Day/memberCenter_scroll.png"
-            alt=""
-            class="memberCenter_scroll scroll"
-          />
-          <img
-            src="../Assets/Day/right_castle.png"
-            alt=""
-            class="right_castle"
+            class="cloud cloud_right"
           />
         </div>
 
-        <!-- <div class="parallax-wrapper" data-depth="0.1">
+        <div class="parallax-wrapper" data-depth="0.1">
           <a href="" class="hoverAreaSkyCity"></a>
           <img
             src="../Assets/Day/day_skyCity_hover.png"
@@ -94,13 +45,13 @@
             class="storyBooks_scroll scroll"
           />
           <img src="../Assets/Day/day_skyCity.png" alt="" class="skyCity" />
-        </div> -->
+        </div>
 
         <!-- <div class="parallax-wrapper" data-depth="0.1"></div> -->
 
         <div class="parallax-wrapper" data-depth="0.11">
           <img
-            src="../Assets/Day/pillar_left_night.png"
+            src="../Assets/Day/pillar_left_day.png"
             alt=""
             class="pillar pillar_left"
           />
@@ -108,7 +59,7 @@
 
         <div class="parallax-wrapper" data-depth="0.11">
           <img
-            src="../Assets/Day/pillar_right_night.png"
+            src="../Assets/Day/pillar_right_day.png"
             alt=""
             class="pillar pillar_right"
           />
@@ -116,7 +67,7 @@
 
         <div class="parallax-wrapper" data-depth="0.05">
           <img
-            src="../Assets/Day/platfrom_front_night.png"
+            src="../Assets/Day/platfrom_front_day.png"
             alt=""
             class="platform"
           />
@@ -125,7 +76,7 @@
         <div class="parallax-wrapper" data-depth="0.05">
           <a href="" class="hoverAreaLamp"></a>
           <img
-            src="../Assets/Day/lamp_night_hover.png"
+            src="../Assets/Day/lamp_day_hover.png"
             alt=""
             class="lamp img_hover"
           />
@@ -135,7 +86,7 @@
             class="lamp img_hover lamp_night"
             style="z-index: 200"
           /> -->
-          <img src="../Assets/Day/lamp_night.png" alt="" class="lamp" />
+          <img src="../Assets/Day/lamp_day.png" alt="" class="lamp" />
         </div>
 
         <!-- <div class="parallax-wrapper" data-depth="0.05"></div> -->
@@ -146,7 +97,7 @@
             <div class="hoverAreaBoy2"></div>
           </a>
           <img
-            src="../Assets/Day/boy_night_hover.png"
+            src="../Assets/Day/boy_day_hover.png"
             alt=""
             class="boy img_hover"
           />
@@ -155,14 +106,14 @@
             alt=""
             class="myCabin_scroll scroll"
           />
-          <img src="../Assets/Day/boy_night.png" alt="" class="boy" />
+          <img src="../Assets/Day/boy_day.png" alt="" class="boy" />
         </div>
 
         <!-- <div class="parallax-wrapper" data-depth="0.05"></div> -->
         <div class="parallax-wrapper" data-depth="0.05">
           <div class="hoverAreaBook" @click="ToAbout"></div>
           <img
-            src="../Assets/Day/book_night_hover.png"
+            src="../Assets/Day/book_day_hover.png"
             alt=""
             class="book img_hover"
           />
@@ -173,26 +124,26 @@
           />
           <div class="magic">
             <img
-              src="../Assets/Day/night_magic1.png"
+              src="../Assets/Day/day_magic1.png"
               alt=""
               class="about_magic1"
               style="z-index: 920"
             />
             <img
-              src="../Assets/Day/night_magic2.png"
+              src="../Assets/Day/day_magic2.png"
               alt=""
               class="about_magic2"
               style="z-index: 910"
             />
             <img
-              src="../Assets/Day/night_magic3.png"
+              src="../Assets/Day/day_magic3.png"
               alt=""
               class="about_magic3"
               style="z-index: 900"
             />
           </div>
 
-          <img src="../Assets/Day/book_night.png" alt="" class="book" />
+          <img src="../Assets/Day/book_day.png" alt="" class="book" />
         </div>
         <!-- <div class="parallax-wrapper" data-depth="0.05"></div> -->
       </div>
