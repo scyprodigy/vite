@@ -30,20 +30,23 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: () => import("@/views/Phantasia.vue"), // 懶加載(可以提升效能)
-      loading: Loading,
+      // loading: Loading,
+      children: [
+        {
+          path: "Day",
+          name: "Day",
+          component: () => import("@/views/PhantasiaDay.vue"), // 懶加載(可以提升效能)
+          // loading: Loading,
+        },
+        {
+          path: "Night",
+          name: "Night",
+          component: () => import("@/views/PhantasiaNight.vue"), // 懶加載(可以提升效能)
+          // loading: Loading,
+        },
+      ],
     },
-    {
-      path: "/Day",
-      name: "Day",
-      component: () => import("@/views/PhantasiaDay.vue"), // 懶加載(可以提升效能)
-      loading: Loading,
-    },
-    {
-      path: "/Night",
-      name: "Night",
-      component: () => import("@/views/PhantasiaNight.vue"), // 懶加載(可以提升效能)
-      loading: Loading,
-    },
+
     {
       path: "/About",
       name: "about",

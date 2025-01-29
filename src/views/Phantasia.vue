@@ -24,7 +24,7 @@
 <template>
   <!-- ===================首頁共用組件(前景)===================== -->
 
-  <div class="wrapper">
+  <div style="background-color: rgba(255, 255, 255, 0)" class="wrapper">
     <transition name="fade_slow" mode="out-in">
       <img
         v-show="showImage"
@@ -155,13 +155,11 @@
         </transition>
       </div>
     </div>
+    <main>
+      <!-- 顯示子頁面內容 -->
+      <router-view></router-view>
+    </main>
   </div>
-
-  <!-- 子頁面顯示區域 -->
-  <main>
-    <router-view></router-view>
-    <!-- 顯示子頁面內容 -->
-  </main>
 </template>
 
 <script setup>
@@ -184,6 +182,12 @@ const toggleDayNight = () => {
     day.value = !day.value; // 改變白天/夜晚
     showImage.value = true; // 再顯示圖片
   }, 1800); // 2秒後切換圖片
+
+  setTimeout(() => {
+    const currentRoute = router.currentRoute.value.path;
+    const newRoute = currentRoute === "/day" ? "/night" : "/day"; // 根據當前路由決定切換的目標
+    router.push(newRoute); // 切換路由
+  }, 100);
 };
 
 onMounted(() => {
@@ -207,6 +211,8 @@ onMounted(() => {
   } else {
     day.value = true;
   }
+
+  router.push(`/${day.value ? "day" : "night"}`);
 });
 
 const ToAbout = () => {
