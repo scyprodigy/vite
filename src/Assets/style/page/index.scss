@@ -33,7 +33,7 @@ button {
   position: relative;
   overflow: hidden;
   background-color: black;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
 }
 
@@ -537,4 +537,12 @@ button {
     width: 24vw;
     right: 30%;
   }
+}
+
+.dayTransferVideo,
+.nightTransferVideo {
+  position: absolute;
+  @include imgCenter();
+  height: 100%;
+  z-index: 200;
 }

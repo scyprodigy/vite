@@ -31,7 +31,7 @@ button {
   position: relative;
   overflow: hidden;
   background-color: black;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
 }
 
@@ -529,4 +529,13 @@ button {
     width: 24vw;
     right: 30%;
   }
+}
+.dayTransferVideo,
+.nightTransferVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  z-index: 200;
 }/*# sourceMappingURL=index.css.map */
