@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fanwood+Text:ital@0;1&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -12,8 +14,8 @@ button {
 
 .bgBook {
   height: 100vh;
-  position: absolute;
   z-index: 1000;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -538,4 +540,150 @@ button {
   transform: translate(-50%, -50%);
   height: 100%;
   z-index: 200;
+}
+
+.about {
+  max-width: 1440px;
+  width: 100%;
+  margin: auto;
+  border: yellow solid 4px;
+}
+.about .content {
+  max-width: 1440px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+  border: blue solid 4px;
+}
+.about .content .leftContent {
+  border: lightgreen solid 4px;
+  padding: 30px;
+  height: 100vh;
+  display: flex;
+}
+.about .content .leftContent .contentBox {
+  width: 373px;
+  max-height: 750px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.about .content .leftContent .contentBox .slogon {
+  border: red solid 2px;
+  color: white;
+}
+.about .content .leftContent .contentBox .slogon h1 {
+  color: #fff;
+  text-shadow: 6px 6px 15px rgba(0, 0, 0, 0.6);
+  font-family: Aleo;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 125%; /* 80px */
+  text-transform: uppercase;
+}
+.about .content .leftContent .contentBox .slogon h2 {
+  color: #fff;
+  text-shadow: 6px 6px 15px rgba(0, 0, 0, 0.6);
+  font-family: Aleo;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 125%;
+  text-transform: uppercase;
+}
+.about .content .leftContent .contentBox .slogon h6 {
+  color: #fff;
+  text-shadow: 6px 6px 15px rgba(0, 0, 0, 0.6);
+  font-family: Aleo;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.about .content .leftContent .contentBox .menu {
+  border: lightgoldenrodyellow solid 2px;
+  margin-top: auto;
+}
+.about .content .leftContent .contentBox .menu button {
+  color: white;
+  color: #fff;
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4);
+  font-family: "Fanwood Text";
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-variant: small-caps;
+}
+.about .content .rightContent {
+  border: lightgreen solid 4px;
+  height: 100vh;
+  padding: 30px;
+}
+.about .content .rightContent .aboutContents {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: red solid 2px;
+  width: 370px;
+  height: 538px;
+}
+.about .content .rightContent .aboutContents .aboutUsContent {
+  position: absolute;
+  width: 370px;
+  height: 538px;
+  z-index: 1;
+  border: blueviolet solid 2px;
+}
+.about .content .rightContent .aboutContents .aboutUsContent h3 {
+  padding: 10px 0px 10px 15px;
+  color: #fff;
+  font-family: "Fanwood Text";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-variant: small-caps;
+}
+.about .content .rightContent .aboutContents .aboutUsContent p,
+.about .content .rightContent .aboutContents .aboutUsContent li {
+  color: #fff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+  font-family: "Fanwood Text";
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 110%; /* 17.6px */
+}
+.about .content .rightContent .aboutContents .aboutUsContent p {
+  padding: 0 15px 15px 15px;
+}
+.about .content .rightContent .aboutContents .aboutUsContent li {
+  padding: 3px 15px 15px 3px;
+}
+.about .content .rightContent .aboutContents .aboutUsContent ul {
+  padding-left: 35px;
+  padding-right: 5px;
+}
+.about .content .rightContent .aboutContents .bgBlack {
+  width: 370px;
+  height: 538px;
+  position: absolute;
+  border-radius: 26px;
+  background: rgba(0, 0, 0, 0.4);
+  filter: blur(6px);
+}
+.about .aboutUsImg {
+  max-width: 1440px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }/*# sourceMappingURL=index.css.map */
