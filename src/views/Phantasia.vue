@@ -28,7 +28,7 @@
 /* ==========影片========== */
 .fade_Video-enter-active,
 .fade_Video-leave-active {
-  transition: opacity 1s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
 }
 
 .fade_Video-enter,
@@ -42,12 +42,7 @@
 
   <div style="background-color: rgba(255, 255, 255, 0)" class="wrapper">
     <transition name="fade_slow" mode="out-in">
-      <img
-        v-show="showImage"
-        :src="`./src/Assets/Day/bookRows_bgi_${day_night}.png`"
-        alt=""
-        class="bgBook"
-      />
+      <img v-show="showImage" :src="bgBook" alt="" class="bgBook" />
     </transition>
     <img
       style="z-index: 300"
@@ -67,11 +62,7 @@
         </div>
         <transition name="fade_slow" mode="in-out">
           <div v-show="showImage" class="parallax-wrapper" data-depth="0.11">
-            <img
-              :src="`./src/Assets/Day/pillar_left_${day_night}.png`"
-              alt=""
-              class="pillar pillar_left"
-            />
+            <img :src="pillar_left" alt="" class="pillar pillar_left" />
           </div>
         </transition>
 
@@ -84,11 +75,7 @@
         </div>
         <transition name="fade_slow" mode="in-out">
           <div v-show="showImage" class="parallax-wrapper" data-depth="0.11">
-            <img
-              :src="`./src/Assets/Day/pillar_right_${day_night}.png`"
-              alt=""
-              class="pillar pillar_right"
-            />
+            <img :src="pillar_right" alt="" class="pillar pillar_right" />
           </div>
         </transition>
 
@@ -102,11 +89,7 @@
 
         <transition name="fade_slow" mode="in-out">
           <div v-show="showImage" class="parallax-wrapper" data-depth="0.05">
-            <img
-              :src="`./src/Assets/Day/platfrom_front_${day_night}.png`"
-              alt=""
-              class="platform"
-            />
+            <img :src="platform" alt="" class="platform" />
           </div>
         </transition>
 
@@ -121,17 +104,9 @@
               :disabled="isButtonDisabled"
               class="hoverAreaLamp"
             ></button>
-            <img
-              :src="`./src/Assets/Day/lamp_${day_night}_hover.png`"
-              alt=""
-              class="lamp img_hover"
-            />
+            <img :src="lamp_hover" alt="" class="lamp img_hover" />
 
-            <img
-              :src="`./src/Assets/Day/lamp_${day_night}.png`"
-              alt=""
-              class="lamp"
-            />
+            <img :src="lamp" alt="" class="lamp" />
           </div>
         </transition>
         <transition name="fade_slow" mode="in-out">
@@ -140,31 +115,19 @@
               <div class="hoverAreaBoy1"></div>
               <div class="hoverAreaBoy2"></div>
             </a>
-            <img
-              :src="`./src/Assets/Day/boy_${day_night}_hover.png`"
-              alt=""
-              class="boy img_hover"
-            />
+            <img :src="boy_hover" alt="" class="boy img_hover" />
             <img
               src="../Assets/Day/myCabin_scroll.png"
               alt=""
               class="myCabin_scroll scroll"
             />
-            <img
-              :src="`./src/Assets/Day/boy_${day_night}.png`"
-              alt=""
-              class="boy"
-            />
+            <img :src="boy" alt="" class="boy" />
           </div>
         </transition>
         <transition name="fade_slow" mode="in-out">
           <div v-show="showImage" class="parallax-wrapper" data-depth="0.05">
             <div class="hoverAreaBook" @click="ToAbout"></div>
-            <img
-              :src="`./src/Assets/Day/book_${day_night}_hover.png`"
-              alt=""
-              class="book img_hover"
-            />
+            <img :src="book_hover" alt="" class="book img_hover" />
             <img
               src="../Assets/Day/about_scroll.png"
               alt=""
@@ -172,29 +135,25 @@
             />
             <div class="magic">
               <img
-                :src="`./src/Assets/Day/${day_night}_magic1.png`"
+                :src="magic1"
                 alt=""
                 class="about_magic1"
                 style="z-index: 920"
               />
               <img
-                :src="`./src/Assets/Day/${day_night}_magic2.png`"
+                :src="magic2"
                 alt=""
                 class="about_magic2"
                 style="z-index: 910"
               />
               <img
-                :src="`./src/Assets/Day/${day_night}_magic3.png`"
+                :src="magic3"
                 alt=""
                 class="about_magic3"
                 style="z-index: 900"
               />
             </div>
-            <img
-              :src="`./src/Assets/Day/book_${day_night}.png`"
-              alt=""
-              class="book"
-            />
+            <img :src="book" alt="" class="book" />
           </div>
         </transition>
       </div>
@@ -235,7 +194,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref, computed } from "vue";
+import { onMounted, ref, computed, watch } from "vue";
 import Parallax from "parallax-js";
 import { useRouter } from "vue-router";
 
@@ -252,6 +211,82 @@ const day_night = computed(() => (day.value ? "day" : "night"));
 const dayTransferVideo = ref(null);
 const nightTransferVideo = ref(null);
 
+//===============動態加載圖片================
+const bgBook = ref("");
+const pillar_left = ref("");
+const pillar_right = ref("");
+const platform = ref("");
+const lamp = ref("");
+const lamp_hover = ref("");
+const boy_hover = ref("");
+const boy = ref("");
+const book_hover = ref("");
+const book = ref("");
+const magic1 = ref("");
+const magic2 = ref("");
+const magic3 = ref("");
+
+const updateImagePaths = (newDayNight) => {
+  bgBook.value = new URL(
+    `../Assets/Day/bookRows_bgi_${newDayNight}.png`,
+    import.meta.url
+  ).href;
+  pillar_left.value = new URL(
+    `../Assets/Day/pillar_left_${newDayNight}.png`,
+    import.meta.url
+  ).href;
+  pillar_right.value = new URL(
+    `../Assets/Day/pillar_right_${newDayNight}.png`,
+    import.meta.url
+  ).href;
+  platform.value = new URL(
+    `../Assets/Day/platfrom_front_${newDayNight}.png`,
+    import.meta.url
+  ).href;
+  lamp.value = new URL(
+    `../Assets/Day/lamp_${newDayNight}.png`,
+    import.meta.url
+  ).href;
+  lamp_hover.value = new URL(
+    `../Assets/Day/lamp_${newDayNight}_hover.png`,
+    import.meta.url
+  ).href;
+  boy_hover.value = new URL(
+    `../Assets/Day/boy_${newDayNight}_hover.png`,
+    import.meta.url
+  ).href;
+  boy.value = new URL(
+    `../Assets/Day/boy_${newDayNight}.png`,
+    import.meta.url
+  ).href;
+  book_hover.value = new URL(
+    `../Assets/Day/book_${newDayNight}_hover.png`,
+    import.meta.url
+  ).href;
+  book.value = new URL(
+    `../Assets/Day/book_${newDayNight}.png`,
+    import.meta.url
+  ).href;
+  magic1.value = new URL(
+    `../Assets/Day/${newDayNight}_magic1.png`,
+    import.meta.url
+  ).href;
+  magic2.value = new URL(
+    `../Assets/Day/${newDayNight}_magic2.png`,
+    import.meta.url
+  ).href;
+  magic3.value = new URL(
+    `../Assets/Day/${newDayNight}_magic3.png`,
+    import.meta.url
+  ).href;
+};
+//===============================================
+
+// 監控 day_night 的變化
+watch(day_night, (newDayNight) => {
+  updateImagePaths(newDayNight); // 當 day_night 改變時更新圖片路徑
+});
+
 const toggleDayNight = () => {
   isButtonDisabled.value = true;
   showImage.value = false; // 先隱藏圖片
@@ -267,7 +302,7 @@ const toggleDayNight = () => {
   setTimeout(() => {
     const newRoute = currentRoute === "/day" ? "/night" : "/day"; // 根據當前路由決定切換的目標
     router.push(newRoute); // 切換路由
-  }, 2000);
+  }, 300);
 
   //  白天晚上影片切換
 
@@ -331,6 +366,8 @@ onMounted(() => {
   } else {
     day.value = true;
   }
+
+  updateImagePaths(day_night.value);
 
   router.push(`/${day.value ? "day" : "night"}`);
 });
