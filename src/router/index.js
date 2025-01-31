@@ -6,9 +6,12 @@ import ProjectMenu from "../components/ProjectMenu.vue";
 import MemberCenterMenu from "../components/MemberCenterMenu.vue";
 import BackStageMenu from "../components/BackStageMenu.vue";
 
+import Phantasia from "../views/Phantasia.vue";
+import PhantasiaDay from "../views/PhantasiaDay.vue";
+import PhantasiaNight from "../views/PhantasiaNight.vue";
+
 //==================因為下方使用懶加載，這段不需要====================
 
-// import Phantasia from "../views/Phantasia.vue";
 // import About from "../views/About.vue";
 
 // MyCabin 個人頁面
@@ -29,19 +32,19 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: () => import("@/views/Phantasia.vue"), // 懶加載(可以提升效能)
+      component: Phantasia, // 懶加載(可以提升效能)
       // loading: Loading,
       children: [
         {
           path: "Day",
           name: "Day",
-          component: () => import("@/views/PhantasiaDay.vue"), // 懶加載(可以提升效能)
+          component: PhantasiaDay, // 懶加載(可以提升效能)
           // loading: Loading,
         },
         {
           path: "Night",
           name: "Night",
-          component: () => import("@/views/PhantasiaNight.vue"), // 懶加載(可以提升效能)
+          component: PhantasiaNight, // 懶加載(可以提升效能)
           // loading: Loading,
         },
       ],
