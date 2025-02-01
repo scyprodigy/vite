@@ -3,7 +3,7 @@
 </style>
 
 <template>
-  <div class="wrapper">
+  <div class="aboutWrapper">
     <div class="about">
       <div class="content">
         <div class="leftContent">
@@ -15,13 +15,13 @@
             </div>
             <div class="menu">
               <div class="aboutUs_button">
-                <button class="aboutUs_button">About Us</button>
+                <button class="btnLink white">About Us</button>
               </div>
               <div class="ourOrigin_button">
-                <button class="ourOrigin_button">Our Origin</button>
+                <button class="btnLink white">Our Origin</button>
               </div>
               <div class="ourServices_button">
-                <button class="ourServices_button">Our Services</button>
+                <button class="btnLink white">Our Services</button>
               </div>
             </div>
           </div>

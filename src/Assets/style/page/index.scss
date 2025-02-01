@@ -1,8 +1,10 @@
 @use "sass:map";
 
 // mixin
-@import "../mixin/mixin";
 @import "../base/font";
+@import "../base/color";
+@import "../mixin/mixin";
+@import "../component/btn";
 
 * {
   margin: 0;
@@ -547,12 +549,21 @@ button {
 
 // =======================About頁面==========================
 
+.aboutWrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  z-index: 3;
+}
+
 .about {
   max-width: 1440px;
   width: 100%;
   margin: auto;
 
-  border: yellow solid 4px;
+  // border: yellow solid 4px;
 
   .content {
     max-width: 1440px;
@@ -563,16 +574,16 @@ button {
     justify-content: space-between;
 
     z-index: 100;
-    border: blue solid 4px;
+    // border: blue solid 4px;
     .leftContent {
-      border: lightgreen solid 4px;
-      padding: 30px;
+      // border: lightgreen solid 4px;
+      padding: 30px 40px 30px 40px;
       height: 100vh;
       display: flex;
 
       .contentBox {
         width: 373px;
-        max-height: 750px;
+        max-height: 600px;
         display: flex;
         flex-direction: column;
         position: relative;
@@ -581,7 +592,7 @@ button {
         transform: translate(-50%, -50%);
 
         .slogon {
-          border: red solid 2px;
+          // border: red solid 2px;
           color: white;
           h1 {
             color: #fff;
@@ -615,26 +626,31 @@ button {
           }
         }
         .menu {
-          border: lightgoldenrodyellow solid 2px;
+          // border: lightgoldenrodyellow solid 2px;
           margin-top: auto;
 
-          button {
-            color: white;
-            color: #fff;
-            text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4);
-            font-family: "Fanwood Text";
-            font-size: 44px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            font-variant: small-caps;
+          color: white;
+          text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4);
+          font-family: "Fanwood Text";
+          font-size: 44px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          font-variant: small-caps;
+
+          .btnLink {
+            padding: 0;
+            opacity: 70%;
+            &:hover {
+              opacity: 100%;
+            }
           }
         }
       }
     }
 
     .rightContent {
-      border: lightgreen solid 4px;
+      // border: lightgreen solid 4px;
       height: 100vh;
       padding: 30px;
 
@@ -644,24 +660,24 @@ button {
         left: 50%;
         transform: translate(-50%, -50%);
 
-        border: red solid 2px;
+        // border: red solid 2px;
 
         // display: flex;
         // flex-direction: column; /* 垂直排列 */
         // align-items: center; /* 使子元素在水平方向居中 */
 
         // height: 100%; /* 確保容器佔據整個父元素高度 */
-        width: 370px;
-        height: 538px;
+        width: 390px;
+        height: 560px;
 
         .aboutUsContent {
           position: absolute;
-          width: 370px;
-          height: 538px;
+          // width: 370px;
+          // height: 538px;
 
           z-index: 1;
 
-          border: blueviolet solid 2px;
+          // border: blueviolet solid 2px;
 
           h3 {
             padding: 10px 0px 10px 15px;
@@ -679,7 +695,7 @@ button {
             color: #fff;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
             font-family: "Fanwood Text";
-            font-size: 16px;
+            font-size: 17px;
             font-style: italic;
             font-weight: 400;
             line-height: 110%; /* 17.6px */
@@ -699,8 +715,8 @@ button {
           }
         }
         .bgBlack {
-          width: 370px;
-          height: 538px;
+          width: 390px;
+          height: 560px;
           position: absolute;
           border-radius: 26px;
           // background-color: #00eaff;

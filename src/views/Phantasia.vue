@@ -38,6 +38,8 @@
 </style>
 
 <template>
+  <Preload />
+
   <!-- ===================首頁共用組件(前景)===================== -->
 
   <div style="background-color: rgba(255, 255, 255, 0)" class="wrapper">
@@ -197,6 +199,7 @@
 import { onMounted, ref, computed, watch } from "vue";
 import Parallax from "parallax-js";
 import { useRouter } from "vue-router";
+import Preload from "../components/Preload.vue";
 
 const parallaxContainer = ref(null);
 const router = useRouter();
@@ -302,7 +305,7 @@ const toggleDayNight = () => {
   setTimeout(() => {
     const newRoute = currentRoute === "/day" ? "/night" : "/day"; // 根據當前路由決定切換的目標
     router.push(newRoute); // 切換路由
-  }, 300);
+  }, 700);
 
   //  白天晚上影片切換
 
@@ -310,11 +313,13 @@ const toggleDayNight = () => {
     // 白天播放影片
     showVideo_day.value = true; // 顯示影片
     showVideo_night.value = false; // 隱藏夜晚影片
+    dayTransferVideo.value.currentTime = 0.1; // 設置播放從0.1秒開始
     dayTransferVideo.value.play();
   } else {
     // 夜晚播放影片
     showVideo_night.value = true; // 顯示影片
     showVideo_day.value = false; // 隱藏白天影片
+    nightTransferVideo.value.currentTime = 0.1; // 設置播放從0.1秒開始
     nightTransferVideo.value.play();
   }
 

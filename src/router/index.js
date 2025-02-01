@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Loading from "../components/Loading.vue";
+// import Preload from "../components/Preload.vue";
 
 import DayLayout from "../views/DayLayout.vue";
 import ProjectMenu from "../components/ProjectMenu.vue";
@@ -33,7 +33,7 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: Phantasia, // 懶加載(可以提升效能)
-      // loading: Loading,
+      // loading: Preload,
       children: [
         {
           path: "Day",
@@ -54,7 +54,7 @@ const router = createRouter({
       path: "/About",
       name: "about",
       component: () => import("@/views/About.vue"),
-      loading: Loading,
+      // loading: Loading,
     },
 
     //===================個人頁面(書櫃、換裝、集點)=======================
@@ -266,13 +266,13 @@ const router = createRouter({
       path: "/btnFmaily", //按鈕元件範例1  /btnFmaily
       name: "test",
       component: () => import("@/views/test/btnFmaily.vue"),
-      loading: Loading,
+      // loading: Loading,
     },
     {
       path: "/sidebar", //按鈕元件範例2  /sidebar
       name: "sidebar",
       component: () => import("@/views/test/sidebar.vue"),
-      loading: Loading,
+      // loading: Loading,
     },
 
     // {
