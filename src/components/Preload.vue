@@ -50,12 +50,33 @@ const preloadImagesAndVideos = () => {
     // scroll素材
     new URL(`../Assets/Day/myCabin_scroll.png`, import.meta.url).href,
     new URL(`../Assets/Day/about_scroll.png`, import.meta.url).href,
-    new URL(`../Assets/Day/about_scroll.png`, import.meta.url).href,
+    new URL(`../Assets/Day/creationCenter_scroll.png`, import.meta.url).href,
+    new URL(`../Assets/Day/memberCenter_scroll.png`, import.meta.url).href,
+    new URL(`../Assets/Day/storyBooks_scroll.png`, import.meta.url).href,
 
     // Day Night route素材
-    new URL(`../Assets/Day/bookRows_bgi_day.png`, import.meta.url).href,
+    // Day
+    new URL(`../Assets/Day/day_base.png`, import.meta.url).href,
+    new URL(`../Assets/Day/day_sky.png`, import.meta.url).href,
+    new URL(`../Assets/Day/day_cloudLeft.png`, import.meta.url).href,
+    new URL(`../Assets/Day/day_cloudRight.png`, import.meta.url).href,
+    new URL(`../Assets/Day/day_skyCity_hover.png`, import.meta.url).href,
+    new URL(`../Assets/Day/day_skyCity.png`, import.meta.url).href,
+
+    // Night
+    new URL(`../Assets/Day/night_river.png`, import.meta.url).href,
+    new URL(`../Assets/Day/sky_night_base.png`, import.meta.url).href,
+    new URL(`../Assets/Day/sky_night.png`, import.meta.url).href,
+    new URL(`../Assets/Day/sky_night_moon.png`, import.meta.url).href,
+    new URL(`../Assets/Day/sky_night_star.png`, import.meta.url).href,
+    new URL(`../Assets/Day/sky_night_plantent.png`, import.meta.url).href,
+    new URL(`../Assets/Day/left_castle_hover.png`, import.meta.url).href,
+    new URL(`../Assets/Day/Right_castle_hover.png`, import.meta.url).href,
+    new URL(`../Assets/Day/left_castle.png`, import.meta.url).href,
+    new URL(`../Assets/Day/right_castle.png`, import.meta.url).href,
   ];
 
+  // 影片素材
   const preloadVideos = [
     new URL(`../Assets/Day/video/day_transfer.webm`, import.meta.url).href,
     new URL(`../Assets/Day/video/night_transfer.webm`, import.meta.url).href,
@@ -72,6 +93,7 @@ const preloadImagesAndVideos = () => {
     const video = document.createElement("video");
     video.src = src;
     video.preload = "auto"; // 預加載影片
+    video.load();
   });
 };
 

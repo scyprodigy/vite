@@ -264,7 +264,7 @@
   transition: width 0.4s ease;
   transform-origin: left;
 }
-.btnLink.dark:hover::after {
+.btnLink.dark:hover::after, .btnLink.dark.active::after {
   width: 100%;
 }
 .btnLink.light {
@@ -288,7 +288,7 @@
   transition: width 0.4s ease;
   transform-origin: left;
 }
-.btnLink.light:hover::after {
+.btnLink.light:hover::after, .btnLink.light.active::after {
   width: 100%;
 }
 .btnLink.white {
@@ -312,7 +312,7 @@
   transition: width 0.4s ease;
   transform-origin: left;
 }
-.btnLink.white:hover::after {
+.btnLink.white:hover::after, .btnLink.white.active::after {
   width: 100%;
 }
 

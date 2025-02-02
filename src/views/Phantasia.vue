@@ -196,7 +196,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref, computed, watch } from "vue";
+import { onMounted, ref, computed, watch, onBeforeUnmount } from "vue";
 import Parallax from "parallax-js";
 import { useRouter } from "vue-router";
 import Preload from "../components/Preload.vue";
@@ -313,13 +313,11 @@ const toggleDayNight = () => {
     // 白天播放影片
     showVideo_day.value = true; // 顯示影片
     showVideo_night.value = false; // 隱藏夜晚影片
-    dayTransferVideo.value.currentTime = 0.1; // 設置播放從0.1秒開始
     dayTransferVideo.value.play();
   } else {
     // 夜晚播放影片
     showVideo_night.value = true; // 顯示影片
     showVideo_day.value = false; // 隱藏白天影片
-    nightTransferVideo.value.currentTime = 0.1; // 設置播放從0.1秒開始
     nightTransferVideo.value.play();
   }
 
@@ -377,6 +375,26 @@ onMounted(() => {
   router.push(`/${day.value ? "day" : "night"}`);
 });
 
+// ========保持過場影片加載(避免過場卡頓)==========
+const intervalId = setInterval(() => {
+  // 檢查是否影片是處於播放中，如果是，就不會觸發 load
+  if (dayTransferVideo.value.paused || dayTransferVideo.value.ended) {
+    dayTransferVideo.value.load(); // 如果影片沒播放或已結束，進行加載
+    console.log(`日間過場影片重新加載..`);
+  }
+
+  if (nightTransferVideo.value.paused || nightTransferVideo.value.ended) {
+    nightTransferVideo.value.load(); // 如果影片沒播放或已結束，進行加載
+    console.log(`夜間過場影片重新加載..`);
+  }
+}, 10000); // 每10秒重新加載
+
+// 在組件卸載前清除 interval 以避免記憶體泄漏
+onBeforeUnmount(() => {
+  clearInterval(intervalId); // 清除 interval
+});
+
+// ========router.push==========
 const ToAbout = () => {
   router.push("/About");
 };
