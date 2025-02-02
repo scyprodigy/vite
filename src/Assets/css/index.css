@@ -938,6 +938,14 @@ button {
   line-height: normal;
   font-variant: small-caps;
 }
+.about .content .leftContent .contentBox .menu .backToHome {
+  font-size: 26px;
+  margin-top: 5px;
+  font-style: italic;
+}
+.about .content .leftContent .contentBox .menu .backToHome::after {
+  height: 3px;
+}
 .about .content .leftContent .contentBox .menu .btnLink {
   padding: 0;
   opacity: 70%;
@@ -1020,6 +1028,14 @@ button {
 .about .ourOriginImg,
 .about .ourServicesImg {
   max-width: 1440px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.about .video1 {
+  max-width: 1440px;
+  z-index: 1;
   position: absolute;
   top: 50%;
   left: 50%;

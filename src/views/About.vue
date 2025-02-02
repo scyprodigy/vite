@@ -79,6 +79,11 @@
                   Our Services
                 </button>
               </div>
+              <div class="backToHome_button">
+                <button @click="backToHome" class="btnLink white backToHome">
+                  Back to home
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -228,6 +233,7 @@
       </div>
 
       <!-- ===========================背景圖========================= -->
+
       <transition name="fade" mode="out-in">
         <div
           v-show="activeBox === 'aboutUs'"
@@ -237,7 +243,11 @@
             hide: activeBox !== 'aboutUs',
           }"
         >
-          <img src="../Assets/Day/aboutUsImg.jpg" alt="" class="aboutUsImg" />
+          <video ref="videoPlayer" autoplay class="video1">
+            <source src="../Assets/Day/video/test_video.mp4" type="video/mp4" />
+            您的瀏覽器不支援 HTML5 視頻標籤。
+          </video>
+          <!-- <img src="../Assets/Day/aboutUsImg.jpg" alt="" class="aboutUsImg" /> -->
         </div>
       </transition>
 
@@ -267,11 +277,18 @@
             hide: activeBox !== 'ourServices',
           }"
         >
-          <img
+          <video ref="videoPlayer" autoplay class="video1">
+            <source
+              src="../Assets/Day/video/test_video2.mp4"
+              type="video/mp4"
+            />
+            您的瀏覽器不支援 HTML5 視頻標籤。
+          </video>
+          <!-- <img
             src="../Assets/Day/ourServicesImg.jpg"
             alt=""
             class="ourServicesImg"
-          />
+          /> -->
         </div>
       </transition>
     </div>
@@ -280,6 +297,10 @@
 
 <script setup>
 import { onMounted, ref } from "vue";
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+const videoPlayer = ref(null);
 
 import "lettering.js";
 import "textillate";
@@ -290,6 +311,13 @@ const activeButton = ref(null);
 const onAboutUsClick = (clicked) => {
   activeBox.value = clicked;
   activeButton.value = clicked;
+  if (videoPlayer.value) {
+    videoPlayer.value.play(); // 播放影片
+  }
+};
+
+const backToHome = () => {
+  router.push("/");
 };
 
 onMounted(() => {
@@ -301,30 +329,42 @@ onMounted(() => {
 
   $(".tlt1").textillate({
     in: {
-      effect: "fadeIn",
+      effect: "flipInY",
       shuffle: true,
-      delay: 150,
+      delay: 170,
     },
     out: {
-      effect: "flip",
+      effect: "fadeOut",
       shuffle: true,
       delay: 150,
     },
   });
   $(".tlt2").textillate({
     in: {
-      effect: "rotateIn",
+      effect: "fadeIn",
       shuffle: true,
-      delay: 100,
+      delay: 120,
     },
     out: {
-      effect: "fadeOutDown",
+      effect: "fadeOut",
       delay: 100,
     },
   });
   $(".tlt3").textillate({
     in: {
-      effect: "rotateIn",
+      effect: "rollIn",
+      shuffle: true,
+      delay: 70,
+    },
+    out: {
+      effect: "fadeOutDown",
+      delay: 50,
+    },
+  });
+
+  $(".tlt4").textillate({
+    in: {
+      effect: "flip",
       shuffle: true,
       delay: 50,
     },

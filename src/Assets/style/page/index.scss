@@ -638,6 +638,15 @@ button {
           line-height: normal;
           font-variant: small-caps;
 
+          .backToHome {
+            font-size: 26px;
+            margin-top: 5px;
+            font-style: italic;
+            &::after {
+              height: 3px;
+            }
+          }
+
           .btnLink {
             padding: 0;
             opacity: 70%;
@@ -753,6 +762,12 @@ button {
     max-width: 1440px;
     // width: 100%;
     // width: 100vw;
+    @include imgCenter();
+  }
+
+  .video1 {
+    max-width: 1440px;
+    z-index: 1;
     @include imgCenter();
   }
 }
