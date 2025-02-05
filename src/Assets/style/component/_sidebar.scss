@@ -25,6 +25,11 @@ $border: $baseBlue solid;
       @include rows(2px, $basecolor);
     }
   }
+  .span {
+    padding: 5px 10px;
+    visibility: hidden;
+    display: none;
+  }
   /* hover */
   &:hover {
     .tab-cross {
