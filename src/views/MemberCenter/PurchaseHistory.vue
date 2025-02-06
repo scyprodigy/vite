@@ -68,7 +68,7 @@
             <div v-if="showuserplan">
               <div class="btnTab-click">
                 <div class="text">
-                  <p>Published</p>
+                  <p>My Plan</p>
                 </div>
                 <div class="tab-cross">
                   <div class="cols">
@@ -82,7 +82,7 @@
               </div>
               <div class="btnTab-click">
                 <div class="text">
-                  <p>Removed</p>
+                  <p>Purchase History</p>
                 </div>
                 <div class="tab-cross">
                   <div class="cols">
@@ -158,9 +158,20 @@
                   id="date-range-dropdown"
                   v-model="selectedRange"
                 >
-                  <option value="2024/01/01 ~ 2024/02/01">2024/01/01 ~ 2024/02/01</option>
-                  <option value="2024/02/02 ~ 2024/03/01">2024/02/02 ~ 2024/03/01</option>
-                  <option value="2024/03/02 ~ 2024/04/01">2024/03/02 ~ 2024/04/01</option>
+                  <option value="2024/01/01">2024/01/01</option>
+                  <option value="2024/02/02">2024/02/02</option>
+                  <option value="2024/03/02">2024/03/02</option>
+                </select>
+
+                <label for="a">~</label>
+
+                <select
+                  id="date-range-dropdown"
+                  v-model="selectedRange"
+                >
+                  <option value="2024/02/01">2024/02/01</option>
+                  <option value="2024/03/01">2024/03/01</option>
+                  <option value="2024/04/01">2024/04/01</option>
                 </select>
 
                 <img 
@@ -426,10 +437,12 @@ export default {
 
 /* 時間選擇 */
 .date-range-selector {
+  width:800px;
   right: 0;
   flex-direction: row;
-  margin-bottom: 5px;
-
+  margin-bottom: 30px ;
+  margin-left: 400px;
+  margin-top: 20px;
 }
 
 .date-range-selector label {
@@ -438,14 +451,13 @@ export default {
   padding: 8px;
 }
 
-
-
 .date-range-selector select {
   padding: 8px;
   font-size: 14px;
   border: none;
   background-color: transparent; /* 背景設為透明 */
   width: 200px;
+  box-shadow: 0px 2px 0px #153243;
 }
 
 .search-icon {
@@ -462,7 +474,7 @@ export default {
   justify-content: center;
   padding: 5px; /* 這個可以讓內部表格與外框有小間距 */
   border: 3.5px solid #153243; /* 藍色外框 */
-  
+  margin-bottom: 10px;
 }
 
 /*表格*/
